@@ -2,23 +2,23 @@ package com.tms.lesson6;
 
 public class ProductService {
 
-    public void printPriceByType(Product[] productList, ProductType type) {
+    public int getPriceByType(Product[] productList, ProductType type) {
+        int price = 0;
         for (Product product : productList) {
             if (product.productType == type) {
-                System.out.println("Стоимость продукта типа " + type + ": " + product.price);
+                price += product.price;
             }
-        }
+        } return price;
     }
 
 
-    public void printQuantityByType(Product[] productList, ProductType type) {
+    public int getQuantityByType(Product[] productList, ProductType type) {
         int productQuantity = 0;
         for (Product product : productList) {
             if (product.productType == type && product.isAvailable == true) {
                 productQuantity++;
             }
-        }
-        System.out.println("Количество доступных товаров типа " + type + ": " + productQuantity);
+        } return productQuantity;
     }
 }
 

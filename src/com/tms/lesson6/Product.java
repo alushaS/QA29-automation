@@ -8,11 +8,11 @@ public class Product {
     public boolean isAvailable;
 
 
-        public Product(ProductType productType, int price, String title, boolean isAvailable){
-            this.productType = productType;
-            this.price = price;
-            this.title = title;
-            this.isAvailable = isAvailable;
+    public Product(ProductType productType, int price, String title, boolean isAvailable){
+           this.productType = productType;
+           this.price = price;
+           this.title = title;
+           this.isAvailable = isAvailable;
 
         }
 
