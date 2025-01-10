@@ -20,11 +20,19 @@ public class MainApp {
 
         ProductService productService = new ProductService();
 
-        productService.findByName(productList, "MacBook");
+        var isFound = productService.findByName(productList, "MacBook");
 
-        productService.findProductsWithPriceMoreThan(productList, 1200);
+        if (isFound){
+            System.out.println("Продукт найден в списке");
+        } else {
+            System.out.println("Продукт не найден в списке");
+        }
 
-        productService.printAllProductsQuantity(productList);
+        System.out.println("Товары, превышающие заданную стоимость: " +
+                productService.findProductsWithPriceMoreThan(productList,800));
+
+        var productsQuantity = productService.findAllProductsQuantity(productList);
+        System.out.println("Количество всех товаров: " + productsQuantity);
 
         Product product5 = new Product("AirPods", 500, 1);
 
